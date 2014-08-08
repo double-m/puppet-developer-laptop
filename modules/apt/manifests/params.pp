@@ -26,7 +26,7 @@ class apt::params {
         }
       }
     }
-    'ubuntu': {
+    'ubuntu','LinuxMint': {
       case $::lsbdistcodename {
         'lucid': {
           $backports_location = 'http://us.archive.ubuntu.com/ubuntu'
@@ -34,7 +34,7 @@ class apt::params {
           $legacy_origin      = true
           $origins            = ['${distro_id} ${distro_codename}-security']
         }
-        'precise', 'trusty': {
+        'precise', 'trusty', 'qiana': {
           $backports_location = 'http://us.archive.ubuntu.com/ubuntu'
           $ppa_options        = '-y'
           $legacy_origin      = true
