@@ -2,7 +2,14 @@
 class fish {
   include 'apt'
 
-  apt::ppa { 'ppa:fish-shell/release-2': }
+  apt::source { 'fish-shell-release-2': 
+    location    => 'http://ppa.launchpad.net/fish-shell/release-2/ubuntu',
+    release     => 'trusty',
+    repos       => 'main',
+    include_src => true,
+    key         => '6DC33CA5',
+    key_server  => 'keyserver.ubuntu.com'
+  }
   ->
   package { 'fish' :
     ensure => 'installed'
