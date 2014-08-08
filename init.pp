@@ -1,6 +1,6 @@
 
 include "fish"
 
-package { ['htop'] : 
+package { ['htop', 'git'] : 
   ensure => installed,
 }
