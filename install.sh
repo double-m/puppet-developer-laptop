@@ -6,4 +6,4 @@ if [ $? -ne 0 ]; then
    sudo apt-get -y install puppet
 fi
 
-sudo puppet apply --modulepath=modules init.pp
+sudo FACTER_home=$HOME puppet apply --modulepath=modules init.pp
