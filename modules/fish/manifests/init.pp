@@ -1,4 +1,3 @@
-
 class fish {
   include 'apt'
 
@@ -16,14 +15,22 @@ class fish {
   }
   ->
   # install fish as the default shell
-  user { $id:
+  user { $real_id:
     ensure => present,
     shell  => "/usr/bin/fish",
+  }
+  ->
+  file { "${home}/.config/fish":
+    ensure => 'directory'
   }
   ->
   file { "${home}/.config/fish/config.fish":
     ensure => 'present',
     source => "puppet:///modules/${module_name}/config.fish",
+  }
+  ->
+  file { "${home}/.config/fish/functions":
+    ensure => 'directory'
   }
   ->
   file { "${home}/.config/fish/functions/fish_prompt.fish":
