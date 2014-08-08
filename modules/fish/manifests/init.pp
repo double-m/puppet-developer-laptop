@@ -1,5 +1,6 @@
 
 class fish {
+  include 'apt'
 
   apt::ppa { 'ppa:fish-shell/release-2': }
   ->
