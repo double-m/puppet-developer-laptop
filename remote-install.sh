@@ -1,4 +1,4 @@
-git clone https://github.com/backuitist/puppet-developer-laptop.git
-
-cd puppet-developer-laptop
+wget https://github.com/backuitist/puppet-developer-laptop/archive/master.zip
+unzip master.zip
+cd puppet-developer-laptop-master
 ./install.sh
