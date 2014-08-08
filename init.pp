@@ -1,5 +1,5 @@
 
-include "fish"
+include 'fish'
 
 package { ['htop', 'git'] : 
   ensure => installed,

@@ -1,4 +1,5 @@
 set -e
+set -x
 
 if [ -f master.zip ]; then
   rm -f master.zip
