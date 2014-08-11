@@ -1,6 +1,11 @@
 class fish {
   include 'apt'
 
+  File {
+    owner => $real_id,
+    group => $real_id
+  }
+
   apt::source { 'fish-shell-release-2': 
     location    => 'http://ppa.launchpad.net/fish-shell/release-2/ubuntu',
     release     => 'trusty',
@@ -38,9 +43,10 @@ class fish {
     source  => "puppet:///modules/${module_name}/fish_prompt.fish",
   }
   ->
-  file_line { 'fish alt dot':
+  file { '/usr/share/fish/functions/fish_default_key_bindings.fish':
     ensure => present,
-    line => 'bind \e. history-token-search-backward',
-    path => '/usr/share/fish/functions/fish_default_key_bindings.fish',    
+    source  => "puppet:///modules/${module_name}/default_key_bindings.fish",
+    owner => 'root',
+    group => 'root'
   }
 }
