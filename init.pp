@@ -1,8 +1,8 @@
 
 include 'fish'
 include 'git'
+include 'terminator'
 
-package { ['htop',
-           'terminator'] : 
+package { ['htop'] : 
   ensure => installed,
 }
