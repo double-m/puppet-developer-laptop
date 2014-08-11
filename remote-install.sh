@@ -15,4 +15,5 @@ cd puppet-developer-laptop-master
 
 ./install.sh
 
+cd ..
 rm -fR puppet-developer-laptop-master
