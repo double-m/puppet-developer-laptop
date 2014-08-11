@@ -39,6 +39,11 @@ class apt(
   $sources              = undef
 ) {
 
+  File {
+    owner => root,
+    group => root
+  }
+
   if $::osfamily != 'Debian' {
     fail('This module only works on Debian or derivatives like Ubuntu')
   }
@@ -69,8 +74,6 @@ class apt(
   file { 'sources.list':
     ensure  => present,
     path    => "${root}/sources.list",
-    owner   => root,
-    group   => root,
     mode    => '0644',
     content => $sources_list_content,
     notify  => Exec['apt_update'],
@@ -79,8 +82,6 @@ class apt(
   file { 'sources.list.d':
     ensure  => directory,
     path    => $sources_list_d,
-    owner   => root,
-    group   => root,
     purge   => $purge_sources_list_d,
     recurse => $purge_sources_list_d,
     notify  => Exec['apt_update'],
@@ -96,8 +97,6 @@ class apt(
   file { 'preferences.d':
     ensure  => directory,
     path    => $preferences_d,
-    owner   => root,
-    group   => root,
     purge   => $purge_preferences_d,
     recurse => $purge_preferences_d,
   }
@@ -131,8 +130,6 @@ class apt(
     content => "Acquire::http::Proxy \"http://${proxy_host}:${proxy_port}\";\n",
     notify  => Exec['apt_update'],
     mode    => '0644',
-    owner   => root,
-    group   => root,
   }
 
   file { 'old-proxy-file':
