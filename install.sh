@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # test for puppet
-dpkg -s puppet
+dpkg -s puppet >/dev/null
 if [ $? -ne 0 ]; then
+   echo "Installing puppet ..."
    sudo apt-get -y install puppet
 fi
 

@@ -8,8 +8,8 @@ if [ -d puppet-developer-laptop-master ]; then
   rm -fR puppet-developer-laptop-master
 fi
 
-wget https://github.com/backuitist/puppet-developer-laptop/archive/master.zip
-unzip master.zip
+wget --quiet https://github.com/backuitist/puppet-developer-laptop/archive/master.zip
+unzip -q master.zip
 rm -f master.zip
 cd puppet-developer-laptop-master
 
