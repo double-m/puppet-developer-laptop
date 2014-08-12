@@ -3,6 +3,6 @@ include 'fish'
 include 'git'
 include 'terminator'
 
-package { ['htop'] : 
+package { ['htop', 'vim'] : 
   ensure => installed,
 }
