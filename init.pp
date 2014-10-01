@@ -13,6 +13,7 @@ package { ['htop', 'vim'] :
 mount { '/tmp' :
   ensure      => 'mounted',
   atboot      => true,
+  device      => 'tmpfs',
   fstype      => 'tmpfs',
   options     => 'defaults,noatime,size=10%,mode=1777'
 }
