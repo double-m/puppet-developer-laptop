@@ -3,6 +3,7 @@ include 'fish'
 include 'git'
 include 'terminator'
 include 'conky'
+include 'java'
 
 package { ['htop', 'vim'] : 
   ensure => installed,
