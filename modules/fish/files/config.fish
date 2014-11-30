@@ -8,7 +8,6 @@ set -x PATH $PATH:/home/bruno/bin
 function update-repo --description 'Update a single APT repository'
    for source in $argv
       sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/$source" \
-
          -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
    end
 end
