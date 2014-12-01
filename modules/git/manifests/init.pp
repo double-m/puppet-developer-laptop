@@ -9,8 +9,10 @@ class git {
     group => $real_id
   }
   
-  file { "${home}/.gitconfig":
-    source  => "puppet:///modules/${module_name}/gitconfig",
-    require => Package['git']
+  if str2bool($::install_gitconfig) {
+    file { "${home}/.gitconfig":
+      source  => "puppet:///modules/${module_name}/gitconfig",
+      require => Package['git']
+    }
   }
 }
