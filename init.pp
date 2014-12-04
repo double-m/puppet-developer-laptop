@@ -6,7 +6,7 @@ include 'conky'
 include 'kupfer'
 include 'java'
 
-package { ['htop', 'vim'] : 
+package { ['htop', 'vim', 'meld', 'curl'] : 
   ensure => installed,
 }
 
