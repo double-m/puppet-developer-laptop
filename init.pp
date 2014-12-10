@@ -5,6 +5,7 @@ include 'terminator'
 include 'conky'
 include 'kupfer'
 include 'java'
+include 'vagrant'
 
 package { ['htop', 'vim', 'meld', 'curl'] : 
   ensure => installed,
