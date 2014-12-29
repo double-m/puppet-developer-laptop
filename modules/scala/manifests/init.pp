@@ -13,7 +13,7 @@ class scala {
     destination => "/tmp/scala-2.11.4.tgz",    
   }
   ->
-  exec { "/bin/tar -xzf /tmp/scala-2.11.4.tgz ${home}/bin/":
+  exec { "/bin/tar -xzf /tmp/scala-2.11.4.tgz -C ${home}/bin/":
     unless => "/bin/ls ${home}/bin/scala-2.11.4",
     user  => $real_id,
     group  => $real_id
