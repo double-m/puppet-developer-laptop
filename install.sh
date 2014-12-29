@@ -1,11 +1,27 @@
 #!/bin/bash
 
-# to avoid having ~/.gitconfig configured with biethb@gmail.com
-if [ "$1" == '--no-gitconfig' ]; then
-  gitconfig='false'
+set -e
+
+printf "\nEnter the location of your custom module (ssh of file path) or nothing if you have none\n> "
+read custom_location
+
+if [ -z "$custom_location" ]; then
+  echo "No customization enabled"
+  PUPPET_TARGET='all'  
+elif [[ $custom_location == ssh://* ]]; then
+  echo "Installing remote custom module..."
+  set -x
+  mkdir -p modules/custom
+  scp -r ${custom_location:6}/* modules/
+  PUPPET_TARGET='custom'  
 else
-  gitconfig='true'
-fi
+  echo "Installing local custom module..."
+  set -x
+  mkdir -p modules/custom
+  eval EXPANDED_LOCATION=$custom_location/*
+  cp -r $EXPANDED_LOCATION modules/custom
+  PUPPET_TARGET='custom'  
+fi  
 
 # test for puppet
 dpkg -s puppet >/dev/null
@@ -17,4 +33,4 @@ fi
 sudo FACTER_install_gitconfig=$gitconfig \
      FACTER_home=$HOME \
      FACTER_real_id=`whoami` \
-     puppet apply --modulepath=modules init.pp
+     puppet apply --modulepath=modules -e "include $PUPPET_TARGET"
