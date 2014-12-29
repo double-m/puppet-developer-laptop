@@ -21,15 +21,16 @@ So if you enter in the prompt `ssh://toto@my.server.com:~/puppet-laptop-custom` 
       + some_template.erb
 
 For instance your `init.pp` could contain the following in order to setup git:
-      
-    class custom {
+```puppet      
+class custom {
 
-      include all
-        
-      file { "${home}/.gitconfig":
-        source  => "puppet:///modules/${module_name}/gitconfig",
-        require => Package['git'],
-        owner => $real_id,
-        group => $real_id
-      }
-    }
+  include all
+    
+  file { "${home}/.gitconfig":
+    source  => "puppet:///modules/${module_name}/gitconfig",
+    require => Package['git'],
+    owner => $real_id,
+    group => $real_id
+  }
+}
+```
