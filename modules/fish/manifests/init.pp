@@ -1,5 +1,6 @@
 class fish {
-  include 'apt'
+  include apt
+  include fish::config
 
   File {
     owner => $real_id,
@@ -27,11 +28,6 @@ class fish {
   ->
   file { "${home}/.config/fish":
     ensure => 'directory'
-  }
-  ->
-  file { "${home}/.config/fish/config.fish":
-    ensure => 'present',
-    source => "puppet:///modules/${module_name}/config.fish",
   }
   ->
   file { "${home}/.config/fish/functions":
