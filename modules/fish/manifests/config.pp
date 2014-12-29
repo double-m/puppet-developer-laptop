@@ -13,12 +13,20 @@ class fish::config {
   }
 }
 
-# either content or source must be defined (and not both of course!)
-define fish::add_config($content = undef, $source = undef, $order = '02') {  
+define fish::add_config($content = undef,
+                        $source = "puppet:///modules/${caller_module_name}/$name",
+                        $order = '02') {
+
+  if $content != undef {
+    $da_source = undef
+  } else {
+    $da_source = $source
+  }
+
   concat::fragment { 'tmpfile':
     target  => $fish::config::target,
     content => $content,
-    source  => $source,
+    source  => $da_source,
     order   => $order
   }
 }
