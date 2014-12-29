@@ -1,12 +1,14 @@
 # includes everything puppet-developer-laptop can provide
 class all {
 	
+  include base
+  include conky
   include fish
   include git
-  include terminator
-  include conky
-  include kupfer
   include java
+  include kupfer
+  include scala
+  include terminator
   include vagrant
 
   package { ['htop', 'vim', 'meld', 'curl'] : 
