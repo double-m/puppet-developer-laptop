@@ -1,6 +1,6 @@
 # Puppet developer laptop
 
-Provisionment for developer work stations. Similar to Boxen but focused on Linux rather than Mac OS X.
+Provisionment for developer work stations. Similar to [Boxen](https://boxen.github.com/) but focused on Linux rather than Mac OS X.
 
 To execute, run the following command:
 
