@@ -23,7 +23,7 @@ define fish::add_config($content = undef,
     $da_source = $source
   }
 
-  concat::fragment { 'tmpfile':
+  concat::fragment { $name:
     target  => $fish::config::target,
     content => $content,
     source  => $da_source,
