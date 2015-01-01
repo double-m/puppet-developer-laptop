@@ -11,7 +11,7 @@ class all {
   include terminator
   include vagrant
 
-  package { ['htop', 'vim', 'meld', 'curl'] : 
+  package { ['htop', 'vim', 'meld', 'curl', 'ack-grep'] : 
     ensure => installed,
   }
 
