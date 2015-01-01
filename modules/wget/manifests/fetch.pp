@@ -20,6 +20,7 @@ define wget::fetch (
   $cache_dir          = undef,
   $cache_file         = undef,
   $flags              = undef,
+  $unless             = undef,
 ) {
 
   include wget
@@ -45,10 +46,14 @@ define wget::fetch (
     false => '--no-verbose'
   }
 
-  if $redownload == true or $cache_dir != undef  {
-    $unless_test = 'test'
+  if $unless != undef {
+    $unless_test = $unless
   } else {
-    $unless_test = "test -s ${destination}"
+    if $redownload == true or $cache_dir != undef  {
+      $unless_test = 'test'
+    } else {
+      $unless_test = "test -s ${destination}"
+    }
   }
 
   $nocheckcert_option = $nocheckcertificate ? {
