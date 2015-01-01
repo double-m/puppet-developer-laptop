@@ -14,7 +14,7 @@ So if you enter in the prompt `ssh://toto@my.server.com:~/puppet-laptop-custom` 
     [files]
       + some_file
       + some_other_file
-    [modules]
+    [manifests]
       + init.pp   # class custom { ... }
       + other.pp  # class custom::other { ... }
     [templates]
