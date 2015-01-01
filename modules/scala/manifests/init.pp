@@ -1,7 +1,6 @@
 class scala {
   
-  # provide the bin directory
-  include base
+  include base::bin
 
   File {
     owner  => $real_id,
@@ -25,7 +24,7 @@ class scala {
   ->
   file { "${home}/bin/scala-current":
     ensure => 'link',
-    target => "${home}/bin/scala-2.11.4"
+    target => $scala_dir
   }
   ->
   file { "${home}/bin/scala":
