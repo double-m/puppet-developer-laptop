@@ -7,6 +7,7 @@ class all {
   include git
   include java
   include kupfer
+  include maven
   include scala
   include terminator
   include vagrant
