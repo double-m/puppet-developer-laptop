@@ -1,8 +1,6 @@
 class base {
   
-  file { "${home}/bin" :
-    ensure => 'directory',
-    owner  => $real_id,
-    group  => $real_id,
-  }
+	include base::bin
+	include base::packages
+	include base::tmp_on_tmpfs
 }
