@@ -1,4 +1,0 @@
-alias p.backuity='cd ~/development/apps/backuity'
-alias p.backuity-common='cd ~/development/utils/backuity-commons'
-alias p.puppet='cd ~/development/puppet'
-alias p.vagrant='cd ~/development/vagrant'
