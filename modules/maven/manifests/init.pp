@@ -7,7 +7,7 @@ class maven {
     group  => $real_id
   }
 
-  $maven_dir = "${home}/bin/maven-3.2.5"  
+  $maven_dir = "${home}/bin/apache-maven-3.2.5"  
   $maven_dir_exists = "/usr/bin/test -d ${maven_dir}"
   $maven_tmp = '/tmp/apache-maven-3.2.5.tgz'
 
@@ -16,7 +16,7 @@ class maven {
     unless      => $maven_dir_exists
   }
   ->
-  exec { "/bin/tar xzf ${maven_tmp} -C ${maven_dir}":
+  exec { "/bin/tar xzf ${maven_tmp} -C ${home}/bin":
     unless => $maven_dir_exists,
     user   => $real_id,
     group  => $real_id
