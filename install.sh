@@ -29,12 +29,15 @@ fi
   
 
 # test for puppet
+set +e
 dpkg -s puppet >/dev/null
 if [ $? -ne 0 ]; then
    echo "Installing puppet ..."
+   set -e
    sudo apt-get -y install puppet
 fi
 
+set -e
 sudo FACTER_install_gitconfig=$gitconfig \
      FACTER_home=$HOME \
      FACTER_real_id=`whoami` \
