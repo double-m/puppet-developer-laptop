@@ -1,4 +1,4 @@
-class custom::lamp_server {
+class custom::apache {
 	
   package { 'apache2':
     ensure => 'latest'

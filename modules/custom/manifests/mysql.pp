@@ -1,4 +1,4 @@
-class custom::lamp_server {
+class custom::mysql {
 	
   package { 'mysql-server':
     ensure => 'latest'

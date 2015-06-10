@@ -40,7 +40,7 @@ class custom::vim_plugins {
     path    => [ "/usr/bin", "/bin" ]
   }
   ->
-  exec { "fix permissions":
+  exec { "fix permissions on ~/.vim":
     command => "sh -c 'chown -R $real_id:$real_id ${home}/.vim'", 
     path    => "/bin"
   }
