@@ -13,7 +13,16 @@ class custom::composer_packages {
   exec { "install php_codesniffer via composer":
     require => Class["custom::composer"],
     command => 'composer global require "squizlabs/php_codesniffer=*"',
-    unless => "grep -qe 'php_codesniffer' -- ${home}/.composer/composer.json",
+    unless => "grep -qe 'squizlabs/php_codesniffer' -- ${home}/.composer/composer.json",
+    path    => [ "/bin", "/usr/bin", "/usr/local/bin" ],
+    environment => ["COMPOSER_HOME=${home}/.composer"],
+    logoutput => true
+  }
+  ->
+  exec { "install robo via composer":
+    require => Class["custom::composer"],
+    command => 'composer global require codegyre/robo',
+    unless => "grep -qe 'codegyre/robo' -- ${home}/.composer/composer.json",
     path    => [ "/bin", "/usr/bin", "/usr/local/bin" ],
     environment => ["COMPOSER_HOME=${home}/.composer"],
     logoutput => true
