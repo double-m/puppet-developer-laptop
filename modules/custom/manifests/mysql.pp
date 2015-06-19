@@ -1,7 +1,7 @@
 class custom::mysql {
 	
-  package { 'mysql-server':
-    ensure => 'latest'
+  package { "mysql-server":
+    ensure => "latest"
   }
   ->
   exec { "mysql should be stopped":

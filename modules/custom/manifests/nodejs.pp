@@ -6,8 +6,8 @@ class custom::nodejs {
     path => "/usr/bin"
   }
   ->
-  package { 'nodejs':
-    ensure => 'latest'
+  package { "nodejs":
+    ensure => "latest"
   }
 
   exec { "install packages globally via npm":

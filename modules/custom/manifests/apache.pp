@@ -1,7 +1,7 @@
 class custom::apache {
 	
-  package { 'apache2':
-    ensure => 'latest'
+  package { "apache2":
+    ensure => "latest"
   }
   ->
   exec { "apache2 should be stopped":
