@@ -5,10 +5,10 @@ class custom::mysql {
   }
   ->
   exec { "mysql should be stopped":
-    command => "/etc/init.d/mysql stop"
+    command => "systemctl stop mysql"
   }
   ->
   exec { "mysql should not start at boot":
-    command => "/usr/sbin/update-rc.d -f mysql remove"
+    command => "systemctl disable mysql"
   }
 }

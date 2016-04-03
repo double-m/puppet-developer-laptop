@@ -1,5 +1,11 @@
 class custom::vim_plugins {
 
+  file_line { 'global_syntax_on':
+    path  => '/etc/vim/vimrc',
+    line  => 'syntax on',
+    match => '^".*syntax on',
+  }
+
   file { ".vimrc":
     path   => "${home}/.vimrc",
     ensure => "file",
@@ -11,6 +17,12 @@ class custom::vim_plugins {
   file_line { ".vimrc content":
     path => "${home}/.vimrc",
     line => "execute pathogen#infect()"
+  }
+  ->
+  file_line { 'user_syntax_on':
+    path => "${home}/.vimrc",
+    line  => 'syntax on',
+    match => '^".*syntax on',
   }
   ->
   file { [ "${home}/.vim/autoload", "${home}/.vim/bundle" ]:

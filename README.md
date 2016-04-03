@@ -34,6 +34,6 @@ class custom {
 
 There are two ways to run the provisionment:
 
- * clone the this repo and run `./install.sh`. This will prompt you to enter 
+ * clone this repo and run `./install.sh`. This will prompt you to enter 
    So if you enter in the prompt `ssh://toto@my.server.com:~/puppet-laptop-custom` then within `puppet-laptop-custom` you should have
  * copy the `provision` script into a USB stick hosting the various customizations

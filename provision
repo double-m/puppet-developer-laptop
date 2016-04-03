@@ -7,7 +7,7 @@ fi
 
 CUSTOM_DIR=`pwd`/$1
 
-set -e
+#set -e
 set -x
 
 TMP_DIR=/tmp/puppet-developer-laptop-master

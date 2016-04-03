@@ -28,7 +28,7 @@ else
 fi
   
 
-# test for puppet
+# test for puppet and curl
 set +e
 dpkg -s puppet >/dev/null
 if [ $? -ne 0 ]; then
@@ -37,7 +37,14 @@ if [ $? -ne 0 ]; then
    sudo apt-get -y install puppet
 fi
 
-set -e
+dpkg -s curl >/dev/null
+if [ $? -ne 0 ]; then
+   echo "Installing curl ..."
+   set -e
+   sudo apt-get -y install curl
+fi
+
+#set -e
 sudo FACTER_install_gitconfig=$gitconfig \
      FACTER_home=$HOME \
      FACTER_real_id=`whoami` \

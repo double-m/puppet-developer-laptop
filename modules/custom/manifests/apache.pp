@@ -5,10 +5,10 @@ class custom::apache {
   }
   ->
   exec { "apache2 should be stopped":
-    command => "/etc/init.d/apache2 stop"
+    command => "systemctl stop apache2"
   }
   ->
   exec { "apache2 should not start at boot":
-    command => "/usr/sbin/update-rc.d -f apache2 remove"
+    command => "systemctl disable apache2"
   }
 }
