@@ -44,7 +44,7 @@ if [ $? -ne 0 ]; then
    sudo apt-get -y install curl
 fi
 
-#set -e
+set -e
 sudo FACTER_install_gitconfig=$gitconfig \
      FACTER_home=$HOME \
      FACTER_real_id=`whoami` \

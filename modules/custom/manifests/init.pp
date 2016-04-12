@@ -12,12 +12,14 @@ class custom {
   include custom::mysql
   include custom::mongodb
   include custom::postgresql
+  include custom::openssh
   include custom::php
   include custom::nodejs
   include custom::ssh_keygen
   include custom::symfony
   include custom::utilities
   include custom::vim_plugins
+  include custom::virtualbox
   include custom::google_chrome
   include custom::wine
 }

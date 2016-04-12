@@ -12,7 +12,8 @@ class custom::utilities{
       "youtube-dl",
       "default-jdk",
       "libreoffice",
-      "smplayer"
+      "smplayer",
+      "dnsutils"
     ]:
     ensure => "latest"
   }
