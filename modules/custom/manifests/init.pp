@@ -18,6 +18,7 @@ class custom {
   include custom::ssh_keygen
   include custom::symfony
   include custom::utilities
+  include custom::vagrant
   include custom::vim_plugins
   include custom::virtualbox
   include custom::google_chrome

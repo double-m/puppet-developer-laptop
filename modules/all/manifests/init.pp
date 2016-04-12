@@ -10,5 +10,4 @@ class all {
   include maven
   include scala
   include terminator
-  include vagrant
 }
