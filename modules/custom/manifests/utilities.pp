@@ -13,7 +13,10 @@ class custom::utilities{
       "default-jdk",
       "libreoffice",
       "smplayer",
-      "dnsutils"
+      "dnsutils",
+      "tofrodos",
+      "tree",
+      "hexer"
     ]:
     ensure => "latest"
   }

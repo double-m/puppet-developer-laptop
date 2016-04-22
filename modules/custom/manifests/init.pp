@@ -2,6 +2,7 @@ class custom {
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ] }
   
+  include custom::shell
   include custom::ansible
   include custom::composer
   include custom::composer_packages
