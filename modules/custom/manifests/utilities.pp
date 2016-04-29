@@ -16,7 +16,9 @@ class custom::utilities{
       "dnsutils",
       "tofrodos",
       "tree",
-      "hexer"
+      "hexer",
+      "python-pip",
+      "ntpdate"
     ]:
     ensure => "latest"
   }

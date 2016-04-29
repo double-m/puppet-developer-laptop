@@ -1,6 +1,6 @@
 class custom::ansible {
 
-  package { "ansible":
+  package { [ "ansible", "python-boto" ]:
     ensure => "latest"
   }
 }

@@ -2,6 +2,7 @@ class custom {
 
   Exec { path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ] }
   
+  include custom::apt
   include custom::shell
   include custom::ansible
   include custom::composer
@@ -24,4 +25,5 @@ class custom {
   include custom::virtualbox
   include custom::google_chrome
   include custom::wine
+  include custom::awscli
 }
