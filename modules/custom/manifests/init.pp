@@ -13,6 +13,7 @@ class custom {
   include custom::apache
   include custom::mysql
   include custom::mongodb
+  include custom::sqlite
   include custom::postgresql
   include custom::openssh
   include custom::php

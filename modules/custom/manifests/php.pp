@@ -1,6 +1,6 @@
 class custom::php {
 
-  package { [ "php5", "php5-mysql", "php5-curl", "phpunit", "php5-xdebug" ]:
+  package { [ "php5", "php5-mysql", "php5-sqlite", "php5-curl", "phpunit", "php5-xdebug" ]:
     ensure => "latest"
   }
   ->
