@@ -17,8 +17,10 @@ class custom::utilities{
       "tofrodos",
       "tree",
       "hexer",
+      "python-gpgme",
       "python-pip",
-      "ntpdate"
+      "ntpdate",
+      "telnet"
     ]:
     ensure => "latest"
   }
