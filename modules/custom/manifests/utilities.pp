@@ -1,26 +1,29 @@
 class custom::utilities{
 	
   package { [
-      "make", 
-      "g++",
-      "markdown",
-      "htop",
-      "nmap",
-      "wireshark",
-      "whois",
-      "iceweasel",
-      "youtube-dl",
       "default-jdk",
-      "libreoffice",
-      "smplayer",
       "dnsutils",
-      "tofrodos",
-      "tree",
+      "dstat",
+      "g++",
       "hexer",
+      "htop",
+      "iceweasel",
+      "keepassx",
+      "libreoffice",
+      "make",
+      "markdown",
+      "nmap",
+      "ntpdate",
+      "pandoc",
       "python-gpgme",
       "python-pip",
-      "ntpdate",
-      "telnet"
+      "smplayer",
+      "telnet",
+      "tofrodos",
+      "tree",
+      "wireshark",
+      "whois",
+      "youtube-dl"
     ]:
     ensure => "latest"
   }
